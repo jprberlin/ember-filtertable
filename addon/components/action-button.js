@@ -50,8 +50,11 @@ export default Em.Component.extend({
       alert("Not yet implemented");
       return;
     }
-    // Actions are defined on the controller, which is the parent of the
-    // filter table component, which is the parent of this button
-    this.get('targetObject').get('targetObject').send(this.get('action'));
+    // This component can lie either in the controller or in the filter table
+    // component. We assume its in the filter table, but if not, the controller
+    // is the relevant targetObject
+    var t = this.get('targetObject');
+    t = (t.get('targetObject') === undefined) ? t : t.get('targetObject');
+    t.send(this.get('action'));
   }
 });
