@@ -231,6 +231,10 @@ export default Em.Component.extend({
       this.set('_ignoreReload', false);
       return;
     }
+    if (this.get('reloadRecords') === true) {
+      this.set('_ignoreReload', true);
+      this.set('reloadRecords', false);
+    }
     var ac = this.get('arrangedContent') ||
              this.get('content.arrangedContent') ||
              this.get('content');
@@ -244,19 +248,25 @@ export default Em.Component.extend({
     if (!Em.isBlank(this.get('targetObject.applyDropdownFilter'))) {
       ac = this.get('targetObject').applyDropdownFilter(ac);
     }
-    ac = this.applyTreeFilter(ac);
-    Em.debug("Showing filteredRecords");
-    var vl = this.get('viewLimit');
-    if (vl > 0 && ac.get('length') > this.get('viewLimit')) {
-      Em.debug("\tChopping records to viewLimit");
-      ac = ac.splice(0, this.get('viewLimit'));
-    }
-    this.set('filteredRecords', Em.A(ac));
-    if (this.get('reloadRecords') === true) {
-      this.set('_ignoreReload', true);
-      this.set('reloadRecords', false);
+    if (ac.then === undefined) {
+      this.showFilteredRecords(ac);
+    } else {
+      var that = this;
+      ac.then(function(records) {
+        that.showFilteredRecords(records.get('content') || records);
+      });
     }
   }.observes('textFilter', 'reloadRecords'),
+  showFilteredRecords: function(records) {
+    records = this.applyTreeFilter(records);
+    Em.debug("Showing filteredRecords");
+    var vl = this.get('viewLimit');
+    if (vl > 0 && records.get('length') > this.get('viewLimit')) {
+      Em.debug("\tChopping records to viewLimit");
+      records = records.splice(0, this.get('viewLimit'));
+    }
+    this.set('filteredRecords', Em.A(records));
+  },
   loadOnContentChange: function() {
     if (Em.isEmpty(this.get('content'))) {
       return;

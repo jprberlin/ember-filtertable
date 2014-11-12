@@ -1,5 +1,13 @@
 # Ember-multiselect Changelog
 
+### 1.1.2
+
+ * filtertable `applyDropdownFilter` can now return a promise
+
+### 1.1.1
+
+ * Missing (?)
+
 ### 1.1.0
 
  * Updated to ember-cli 0.1.1
