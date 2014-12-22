@@ -1,3 +1,4 @@
+/* jshint node: true */
 /* global require, module */
 
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
@@ -17,7 +18,6 @@ app.import('vendor/filtertable.css');
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
-
 app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
 
 module.exports = app.toTree();

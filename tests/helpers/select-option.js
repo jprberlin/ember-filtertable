@@ -1,6 +1,6 @@
-import Em from 'ember';
+import Ember from 'ember';
 
-export default Em.Test.registerAsyncHelper('selectOption', function(app, selector) {
+export default Ember.Test.registerAsyncHelper('selectOption', function(app, selector) {
     // choose an option and trigger the change
     find(selector).prop('selected', true);
     find(selector).change();

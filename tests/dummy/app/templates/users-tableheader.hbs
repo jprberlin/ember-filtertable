@@ -13,12 +13,12 @@
 
   <td class="pull-right">
     <span class="pull-left">
-      {{view Ember.Select content=targetObject.activeFilterOptions
+      {{view "select" content=targetObject.activeFilterOptions
                           selection=targetObject.activeFilter
                           class="spec-activeDropdown form-control"}}
     </span>
     <span class="pull-left">
-      {{view Ember.Select content=targetObject.genderFilterOptions
+      {{view "select" content=targetObject.genderFilterOptions
                           selection=targetObject.genderFilter
                           class="spec-genderDropdown form-control"}}
     </span>
