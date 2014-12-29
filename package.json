@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-filtertable",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -36,7 +36,7 @@
     "body-parser": "^1.2.0",
     "broccoli-asset-rev": "^1.0.0",
     "connect-restreamer": "^1.0.0",
-    "ember-cli": "0.1.4",
+    "ember-cli": "^0.1.5",
     "ember-cli-content-security-policy": "0.3.0",
     "ember-cli-dependency-checker": "0.0.6",
     "ember-cli-esnext": "0.1.1",

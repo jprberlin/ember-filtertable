@@ -1,5 +1,10 @@
 # Ember-multiselect Changelog
 
+### 1.2.1
+ * Upgraded Ember to 1.9.1
+ * Upgraded Handlebars to 2.0
+ * Upgraded Ember-cli to 0.1.5
+
 ### 1.2.0
 
  * Upgraded Ember to 1.9
