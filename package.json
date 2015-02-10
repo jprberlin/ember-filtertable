@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-filtertable",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gevious/ember-filtertable"
+    "url": "https://github.com/squirelabs/ember-filtertable"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -29,9 +29,9 @@
   "author": "Nico Gevers",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gevious/ember-filtertable/issues"
+    "url": "https://github.com/squirelabs/ember-filtertable/issues"
   },
-  "homepage": "https://github.com/gevious/ember-filtertable",
+  "homepage": "https://github.com/squirelabs/ember-filtertable",
   "devDependencies": {
     "body-parser": "^1.2.0",
     "broccoli-asset-rev": "^1.0.0",
